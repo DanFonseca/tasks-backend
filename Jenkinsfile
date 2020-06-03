@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage ('Build Backend'){
             steps{
-                bat "mvn clena package -DskipTests=true"
+                bat 'mvn clena package -DskipTests=true'
             }
         }
     }
