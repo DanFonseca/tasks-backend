@@ -52,7 +52,7 @@ pipeline{
             steps{
                 dir('frontend'){
                     git credentialsId: 'DanFonseca_GIT', url: 'https://github.com/DanFonseca/tasks-frontend.git'
-                    bat 'clean mvn package'
+                    bat 'mvn clean package'
                 }
             }
         }
