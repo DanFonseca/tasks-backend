@@ -66,6 +66,11 @@ pipeline{
                 }
             }
         }
+        stage ('Deploy Prod'){
+            steps{
+                bat 'docker-compose up -d'
+            }
+        }
     }
 }
 
