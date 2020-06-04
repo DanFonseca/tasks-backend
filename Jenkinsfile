@@ -57,6 +57,15 @@ pipeline{
                 }
             }
         }
+
+        stage('Functional Tests'){
+            steps{
+                dir('functional-test'){
+                    git credentialsId: 'DanFonseca_GIT', url: 'https://github.com/DanFonseca/test-funcional-selinium'
+                    bat 'mvn test'
+                }
+            }
+        }
     }
 }
 
