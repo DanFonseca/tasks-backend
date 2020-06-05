@@ -45,4 +45,10 @@ public class TaskController {
 		Task saved = todoRepo.save(todo);
 		return new ResponseEntity<Task>(saved, HttpStatus.CREATED);
 	}
+	
+	@RequestMapping("/{id}")
+	public ResponseEntity<Void> delete (@RequestParam Long id){
+		todoRepo.deleteById(id);
+		return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+	}
 }
